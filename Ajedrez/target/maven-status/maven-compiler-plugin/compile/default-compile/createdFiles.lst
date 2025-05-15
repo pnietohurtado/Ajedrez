@@ -1,0 +1,10 @@
+DeskManager\DeskManager.class
+com\mycompany\ajedrez\piezas\Pieza.class
+DeskManager\Desk.class
+com\mycompany\ajedrez\LogicaFichas.class
+com\mycompany\ajedrez\Color.class
+Juego\Main$1.class
+com\mycompany\ajedrez\Ajedrez.class
+Juego\GamePanel.class
+com\mycompany\ajedrez\piezas\Peon.class
+Juego\Main.class
