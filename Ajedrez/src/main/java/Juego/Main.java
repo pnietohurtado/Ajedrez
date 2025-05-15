@@ -45,6 +45,7 @@ public class Main {
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setResizable(false);
         ventana.setTitle("Ajedrez");
+        System.out.println("hola");
         
         GamePanel gp = new GamePanel(); 
         ventana.add(gp);
