@@ -44,6 +44,10 @@ public class DeskManager {
             ds[1].image = ImageIO.read(getClass().getResourceAsStream("/Desk/Negro.png")); 
             ds[1].collision = true; 
             
+            ds[2] = new Desk(); 
+            ds[2].image = ImageIO.read(getClass().getResourceAsStream("/Desk/madera.png")); 
+            ds[2].collision = true; 
+            
             
         }catch(IOException e){
             
@@ -83,7 +87,7 @@ public class DeskManager {
     }
     
     public void draw(Graphics2D g2){
-         int col = 0; 
+        int col = 0; 
         int row = 0; 
         int x = 0; 
         int y = 0; 

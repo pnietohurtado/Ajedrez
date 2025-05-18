@@ -1,5 +1,8 @@
+Peon\PeonManager.class
+Peon\Peon.class
 Juego\Main$1.class
 com\mycompany\ajedrez\Ajedrez.class
+Juego\MenuPanel.class
 com\mycompany\ajedrez\piezas\Peon.class
 Juego\Main.class
 DeskManager\DeskManager.class

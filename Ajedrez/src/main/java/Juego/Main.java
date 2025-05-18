@@ -56,6 +56,7 @@ public class Main {
         ventana.setVisible(true); 
         
         gp.startThread();
+        gp.startThread();
         
     }
                 

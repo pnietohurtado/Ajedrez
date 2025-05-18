@@ -5,6 +5,7 @@
 package Juego;
 
 import DeskManager.DeskManager;
+import Peon.PeonManager;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -27,8 +28,20 @@ public class GamePanel extends JPanel implements Runnable{
     public final int screenHeight = tileSize * maxScreenRow; 
     
     public Thread gameThread; 
+    public Thread startThread; 
     public DeskManager dk = new DeskManager(this); 
     public Mouse m = new Mouse(); 
+    public MenuPanel mp = new MenuPanel(this); 
+    
+    //Declaración de los peones
+    public PeonManager pN1 = new PeonManager(this, this.tileSize, this.tileSize * 7); 
+    public PeonManager pN2 = new PeonManager(this, this.tileSize * 2, this.tileSize * 7); 
+    public PeonManager pN3 = new PeonManager(this, this.tileSize * 3, this.tileSize * 7); 
+    public PeonManager pN4 = new PeonManager(this, this.tileSize * 4, this.tileSize * 7); 
+    public PeonManager pN5 = new PeonManager(this, this.tileSize * 5, this.tileSize * 7); 
+    public PeonManager pN6 = new PeonManager(this, this.tileSize * 6, this.tileSize * 7); 
+    public PeonManager pN7 = new PeonManager(this, this.tileSize * 7, this.tileSize * 7); 
+    public PeonManager pN8 = new PeonManager(this, this.tileSize * 8, this.tileSize * 7); 
     
     public GamePanel(){
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -42,6 +55,11 @@ public class GamePanel extends JPanel implements Runnable{
     public void startThread(){
         gameThread = new Thread(this); 
         gameThread.start(); 
+    }
+    
+    public void gameStart(){
+        startThread = new Thread(mp); 
+        startThread.start(); 
     }
     
     public final int FPS = 60; 
@@ -67,6 +85,8 @@ public class GamePanel extends JPanel implements Runnable{
             timer += (currentTime - lastTime); 
             lastTime = currentTime; 
             
+            //System.out.println(m.estado);
+            
             if(delta >= 1){
                 update(); 
                 repaint();  
@@ -90,7 +110,14 @@ public class GamePanel extends JPanel implements Runnable{
         Graphics2D g2 = (Graphics2D) g; 
         
         dk.draw(g2);
-     
+        pN1.draw(g2); 
+        pN2.draw(g2); 
+        pN3.draw(g2); 
+        pN4.draw(g2); 
+        pN5.draw(g2); 
+        pN6.draw(g2); 
+        pN7.draw(g2); 
+        pN8.draw(g2); 
         // g2.drawString("Me cago en las muelas", tileSize * 2, tileSize * 2); 
         
         g2.dispose(); 

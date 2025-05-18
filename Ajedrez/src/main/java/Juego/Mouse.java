@@ -14,40 +14,35 @@ import java.awt.event.MouseListener;
 public class Mouse implements MouseListener{
     
     private int x,y; 
+    public boolean estado = true; 
 
     @Override
     public void mouseClicked(MouseEvent e) {
         x = e.getX(); 
         y = e.getY(); 
         System.out.println("X -> "+x+ " Y -> "+y);
+        estado = false; 
+        System.out.println(estado);
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        x = e.getX(); 
-        y = e.getY(); 
-        System.out.println("X -> "+x+ " Y -> "+y);
+      
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        x = e.getX(); 
-        y = e.getY(); 
-        System.out.println("X -> "+x+ " Y -> "+y);
+        
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        x = e.getX(); 
-        y = e.getY(); 
-        System.out.println("X -> "+x+ " Y -> "+y);
+       
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        x = e.getX(); 
-        y = e.getY(); 
-        System.out.println("X -> "+x+ " Y -> "+y);
+        
     }
     
 }
