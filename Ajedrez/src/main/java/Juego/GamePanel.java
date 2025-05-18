@@ -4,6 +4,7 @@
  */
 package Juego;
 
+import DeskManager.DeskManager;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -26,6 +27,8 @@ public class GamePanel extends JPanel implements Runnable{
     public final int screenHeight = tileSize * maxScreenRow; 
     
     public Thread gameThread; 
+    public DeskManager dk = new DeskManager(this); 
+    public Mouse m = new Mouse(); 
     
     public GamePanel(){
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -33,6 +36,7 @@ public class GamePanel extends JPanel implements Runnable{
         this.setDoubleBuffered(true); 
         this.setFocusable(true); 
         this.setLayout(null);
+        this.addMouseListener(m);
     }
     
     public void startThread(){
@@ -85,7 +89,9 @@ public class GamePanel extends JPanel implements Runnable{
         super.paintComponent(g); 
         Graphics2D g2 = (Graphics2D) g; 
         
-        g2.drawString("Me cago en las muelas", tileSize * 2, tileSize * 2); 
+        dk.draw(g2);
+     
+        // g2.drawString("Me cago en las muelas", tileSize * 2, tileSize * 2); 
         
         g2.dispose(); 
         

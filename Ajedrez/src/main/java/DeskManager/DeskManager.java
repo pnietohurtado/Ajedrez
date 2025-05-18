@@ -30,15 +30,19 @@ public class DeskManager {
         deskNum = new int[gp.maxScreenCol][gp.maxScreenRow]; 
         
         getDeskImage(); 
-        loadDesk(desk+".txt"); 
+        loadDesk("/mapa/Mapa.txt"); 
     }
     
     public void getDeskImage(){
         try{
             
             ds[0] = new Desk(); 
-            ds[0].image = ImageIO.read(getClass().getResourceAsStream("emme")); 
+            ds[0].image = ImageIO.read(getClass().getResourceAsStream("/Desk/Blanco.png")); 
             ds[0].collision = true; 
+            
+            ds[1] = new Desk(); 
+            ds[1].image = ImageIO.read(getClass().getResourceAsStream("/Desk/Negro.png")); 
+            ds[1].collision = true; 
             
             
         }catch(IOException e){
@@ -59,7 +63,7 @@ public class DeskManager {
                 String line = br.readLine(); 
                 
                 while(col < gp.maxScreenCol ){
-                    String numbers[] = line.split("   "); 
+                    String numbers[] = line.split(" "); 
                     
                     int num = Integer.parseInt(numbers[col]); 
                     deskNum[col][row] = num; 
@@ -79,19 +83,25 @@ public class DeskManager {
     }
     
     public void draw(Graphics2D g2){
-        int col = 0; 
+         int col = 0; 
         int row = 0; 
         int x = 0; 
         int y = 0; 
-        int worldCol = 0; 
-        int worldRow = 0; 
         
         while(col < gp.maxScreenCol && row < gp.maxScreenRow){
-            int desNum = deskNum[col][row]; 
             
-            int worldX = worldCol * gp.tileSize; 
-            int worldY = worldRow * gp.tileSize; 
+            int tileNum = deskNum[col][row]; 
             
+            g2.drawImage(ds[tileNum].image, x,y,gp.tileSize,gp.tileSize,null); 
+            col++; 
+            x += gp.tileSize; 
+            
+            if(col == gp.maxScreenCol){
+                col = 0; 
+                x = 0; 
+                row++; 
+                y += gp.tileSize; 
+            }
         }
         
     }
