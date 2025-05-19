@@ -30,7 +30,7 @@ public class GamePanel extends JPanel implements Runnable{
     public Thread gameThread; 
     public Thread startThread; 
     public DeskManager dk = new DeskManager(this); 
-    public Mouse m = new Mouse(); 
+    public Mouse m = new Mouse(this); 
     public MenuPanel mp = new MenuPanel(this); 
     
     //Declaración de los peones
