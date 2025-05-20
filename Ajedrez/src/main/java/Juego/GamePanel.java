@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.ArrayList;
 import javax.swing.JPanel;
 
 /**
@@ -42,6 +43,8 @@ public class GamePanel extends JPanel implements Runnable{
     public PeonManager pN6 = new PeonManager(this, this.tileSize * 6, this.tileSize * 7); 
     public PeonManager pN7 = new PeonManager(this, this.tileSize * 7, this.tileSize * 7); 
     public PeonManager pN8 = new PeonManager(this, this.tileSize * 8, this.tileSize * 7); 
+    
+    
     
     public GamePanel(){
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));

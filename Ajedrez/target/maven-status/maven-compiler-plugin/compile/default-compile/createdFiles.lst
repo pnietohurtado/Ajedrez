@@ -1,6 +1,7 @@
 Peon\PeonManager.class
 Peon\Peon.class
 Juego\Main$1.class
+Conexion\Conexion.class
 com\mycompany\ajedrez\Ajedrez.class
 Juego\MenuPanel.class
 com\mycompany\ajedrez\piezas\Peon.class
