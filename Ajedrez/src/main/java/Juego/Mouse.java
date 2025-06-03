@@ -18,7 +18,7 @@ import java.sql.SQLException;
  */
 public class Mouse implements MouseListener{
     
-    private int x,y; 
+    public int x,y; 
     public boolean estado = true; 
     private GamePanel gp; 
     PreparedStatement pt = null; 
